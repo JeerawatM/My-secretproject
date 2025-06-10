@@ -5,11 +5,16 @@ import {
 
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import Uxui from "./components/uxui";
 import "./index.css";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/uxui",
+    element: <Uxui />,
   },
 ])
 

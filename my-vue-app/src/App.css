@@ -1,46 +1,360 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  text-align: center; */
 }
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, cupcake,cyberpunk;
+  themes: light --default, dark --prefersdark, cupcake, cyberpunk;
+}
+
+/* กำหนดให้ html และ body มีความสูงเต็มหน้าจอ */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 200vh;
+}
+
+.section {
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.section-one {
+  background-color: #ff6347;
+}
+
+.section-two {
+  background-color: #4682b4;
+}
+
+/* navbar */
+.nav {
+  width: 100%;
+  height: 30px;
+  background-color: #1b0027;
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  gap: 5px;
+  color: white;
+}
+/* navbar */
+
+/* ปุ่ม back to top */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease; /* เพิ่ม transition ให้ปุ่มแสดง/หายอย่างนุ่มนวล */
+  z-index: 999; /* ให้ปุ่มอยู่เหนือองค์ประกอบอื่นๆ */
+}
+
+.back-to-top-btn:hover {
+  background-color: #0056b3; /* สีเข้มขึ้นเมื่อ hover */
+  transform: translateY(-3px); /* ยกปุ่มขึ้นเล็กน้อยเมื่อ hover */
+}
+
+
+
+/* 1. Background image for Container */
+#temple.templeall {
+  background-image: url("https://via.placeholder.com/1920x1080/add8e6/000000?text=Background+Temple"); /* Replace with your actual background image */
+  background-size: cover; /* Ensures the image covers the entire container without distortion */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  min-height: 100vh; /* Ensures the container takes at least the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  color: #fff; /* Example text color for readability on background */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds shadow for readability */
+}
+
+/* 2. Column display for Items */
+.items-grid {
+  display: grid;
+  gap: 20px; /* Space between items */
+  width: 100%;
+  max-width: 1200px; /* Max width for the grid */
+  margin-top: 20px;
+}
+
+.columns-2 {
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+}
+
+.columns-3 {
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+}
+
+.columns-4 {
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+}
+
+/* Responsive adjustments for columns */
+@media (max-width: 768px) {
+  .columns-4,
+  .columns-3 {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Fallback to 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .columns-4,
+  .columns-3,
+  .columns-2 {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* Single column on very small screens */
+  }
+}
+
+/* 1. Background image for Main Container */
+#temple.templeall {
+  background-image: url('https://via.placeholder.com/1920x1080/add8e6/000000?text=Background+Temple'); /* Replace with your actual background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.main-title {
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 2.5em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff; /* Ensure visibility on background */
+}
+
+/* --- Category Display Styles --- */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for categories */
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 40px;
+}
+
+.category-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.category-image-wrapper {
+  width: 100%;
+  height: 200px; /* Fixed height for category images */
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.category-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crop category images */
+  display: block;
+}
+
+.category-card h2 {
+  font-size: 1.8em;
+  margin: 0 15px 15px 15px;
+  padding: 0;
+}
+
+/* --- Back Button --- */
+.back-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* 2. Column display for Items */
+.items-grid {
+  display: grid;
+  gap: 20px; /* Space between items */
+  width: 100%;
+  max-width: 1200px; /* Max width for the grid */
+  margin-top: 20px;
+}
+
+.columns-2 {
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+}
+
+.columns-3 {
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+}
+
+.columns-4 {
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+}
+
+/* Responsive adjustments for columns */
+@media (max-width: 992px) { /* Adjust breakpoint for larger screens */
+  .columns-4 {
+    grid-template-columns: repeat(3, 1fr); /* Fallback to 3 columns on medium screens */
+  }
+}
+@media (max-width: 768px) {
+  .columns-4,
+  .columns-3 {
+    grid-template-columns: repeat(2, 1fr); /* Fallback to 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .columns-4,
+  .columns-3,
+  .columns-2 {
+    grid-template-columns: repeat(1, 1fr); /* Single column on very small screens */
+  }
+}
+
+.wat {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for items */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: center;
+  color: #333;
+}
+
+/* 4. Image cropping for Item images */
+.image-container {
+  width: 300px; /* Desired display width */
+  height: 300px; /* Desired display height */
+  overflow: hidden; /* This is key for cropping */
+  margin: 0 auto 10px auto; /* Center the image container and add some margin */
+  border-radius: 4px; /* Slightly rounded corners for the image container */
+}
+
+#imagewatthai.imagewatthai2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is the core of the cropping technique */
+  display: block; /* Removes extra space below the image */
+}
+
+/* Controls styling */
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.controls label {
+  color: #fff;
+}
+
+.controls select,
+.controls button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.controls select {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.controls button {
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: #0056b3;
+}
+
+.autoplay-indicator {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 0, 0.8);
+  color: #333;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.no-items-message {
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
 }
