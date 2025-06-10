@@ -64,7 +64,7 @@ const Uxui = () => {
 
   return (
     <div id="temple" className="templeall">
-      <h1 className="main-title">วัดไทย</h1>
+      <h1 className="main-title" style={{color:"black"}}>วัดไทย</h1>
 
       {!selectedRegion ? (
 
@@ -88,7 +88,7 @@ const Uxui = () => {
             &larr; กลับไปยังหมวดหมู่
           </button>
 
-          <h2 className="section-title">วัดใน{categories.find(cat => cat.id === selectedRegion)?.name || 'ภูมิภาคนี้'}</h2>
+          <h2 className="section-title" style={{color:"black"}}>วัดใน{categories.find(cat => cat.id === selectedRegion)?.name || 'ภูมิภาคนี้'}</h2>
 
           <div className="controls">
             <label htmlFor="column-select">จำนวนคอลัมภ์: </label>

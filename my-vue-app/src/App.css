@@ -9,141 +9,40 @@
   themes: light --default, dark --prefersdark, cupcake, cyberpunk;
 }
 
-/* กำหนดให้ html และ body มีความสูงเต็มหน้าจอ */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 200vh;
-}
-
-.section {
-  max-height: 100vh;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-family: sans-serif;
-  text-align: center;
-}
-
-.section-one {
-  background-color: #ff6347;
-}
-
-.section-two {
-  background-color: #4682b4;
-}
-
-/* navbar */
-.nav {
-  width: 100%;
-  height: 30px;
-  background-color: #1b0027;
-  display: flex;
-  justify-content: center;
-  text-decoration: underline;
-  gap: 5px;
-  color: white;
-}
-/* navbar */
-
-/* ปุ่ม back to top */
-.back-to-top-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.3s ease, transform 0.3s ease; /* เพิ่ม transition ให้ปุ่มแสดง/หายอย่างนุ่มนวล */
-  z-index: 999; /* ให้ปุ่มอยู่เหนือองค์ประกอบอื่นๆ */
-}
-
-.back-to-top-btn:hover {
-  background-color: #0056b3; /* สีเข้มขึ้นเมื่อ hover */
-  transform: translateY(-3px); /* ยกปุ่มขึ้นเล็กน้อยเมื่อ hover */
-}
-
-
-
-/* 1. Background image for Container */
 #temple.templeall {
-  background-image: url("https://via.placeholder.com/1920x1080/add8e6/000000?text=Background+Temple"); /* Replace with your actual background image */
-  background-size: cover; /* Ensures the image covers the entire container without distortion */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  min-height: 100vh; /* Ensures the container takes at least the full viewport height */
+  background-image: url("https://via.placeholder.com/1920x1080/add8e6/000000?text=Background+Temple");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  box-sizing: border-box; /* Include padding in the element's total width and height */
-  color: #fff; /* Example text color for readability on background */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds shadow for readability */
+  box-sizing: border-box;
+  color: #fff; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* 2. Column display for Items */
 .items-grid {
   display: grid;
   gap: 20px; /* Space between items */
   width: 100%;
-  max-width: 1200px; /* Max width for the grid */
+  max-width: 1200px; 
   margin-top: 20px;
 }
 
 .columns-2 {
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-columns: repeat(2, 1fr); 
 }
 
 .columns-3 {
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-columns: repeat(3, 1fr); 
 }
 
 .columns-4 {
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-columns: repeat(4, 1fr); 
 }
-
-/* Responsive adjustments for columns */
-@media (max-width: 768px) {
-  .columns-4,
-  .columns-3 {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* Fallback to 2 columns on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .columns-4,
-  .columns-3,
-  .columns-2 {
-    grid-template-columns: repeat(
-      1,
-      1fr
-    ); /* Single column on very small screens */
-  }
-}
-
-/* 1. Background image for Main Container */
 #temple.templeall {
   background-image: url('https://via.placeholder.com/1920x1080/add8e6/000000?text=Background+Temple'); /* Replace with your actual background image */
   background-size: cover;
@@ -217,7 +116,6 @@ body {
   padding: 0;
 }
 
-/* --- Back Button --- */
 .back-button {
   background-color: #007bff;
   color: white;
@@ -255,28 +153,6 @@ body {
 .columns-4 {
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
 }
-
-/* Responsive adjustments for columns */
-@media (max-width: 992px) { /* Adjust breakpoint for larger screens */
-  .columns-4 {
-    grid-template-columns: repeat(3, 1fr); /* Fallback to 3 columns on medium screens */
-  }
-}
-@media (max-width: 768px) {
-  .columns-4,
-  .columns-3 {
-    grid-template-columns: repeat(2, 1fr); /* Fallback to 2 columns on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .columns-4,
-  .columns-3,
-  .columns-2 {
-    grid-template-columns: repeat(1, 1fr); /* Single column on very small screens */
-  }
-}
-
 .wat {
   background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for items */
   border-radius: 8px;
